@@ -1,0 +1,11 @@
+{
+  "name": "smart-campus-cash",
+  "version": "1.0.0",
+  "description": "Smart Campus Cash - Sistem Kas & Keuangan Kampus Berbasis Web dengan AI",
+  "scripts": {
+    "start": "node chatbot/server.js",
+    "chatbot": "node chatbot/server.js"
+  },
+  "keywords": ["smart-campus-cash", "nvidia", "nodejs", "chatbot"],
+  "license": "MIT"
+}

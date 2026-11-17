@@ -1,0 +1,17 @@
+{
+    "name": "smart-campus/cash",
+    "description": "Smart Campus Cash - Sistem Kas Keuangan Kampus Berbasis Web dengan AI",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers/ComponentHelper.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.1"
+    }
+}
