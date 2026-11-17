@@ -1,150 +1,126 @@
-# Smart Campus Cash
+# SMART CAMPUS CASH
+### Sistem Informasi Keuangan Kampus Berbasis Web
 
-Sistem Kas & Keuangan Kampus Berbasis Web dengan Arsitektur MVC & Integrasi AI (Tahap Fondasi).
+## 1. Identitas Pengembang
 
-## 📌 Ringkasan Proyek
-Smart Campus Cash dirancang untuk mengelola keuangan kampus secara transparan, akurat, dan modern dengan dukungan multi-role (Admin, Mahasiswa, Kasir, dan Bagian Keuangan) serta kesiapan AI Financial Assistant & Insight.
-
----
-
-## 🏛️ Arsitektur MVC & Struktur Direktori
-
-```text
-sistem keuangan/
-├── app/
-│   ├── Controllers/
-│   │   ├── HomeController.php               # Landing page controller
-│   │   ├── AuthController.php               # Login placeholder controller
-│   │   ├── DashboardController.php          # Template dashboard & role switcher
-│   │   └── ComponentShowcaseController.php  # UI Reusable components showcase
-│   ├── Core/
-│   │   ├── App.php                          # Router, dispatcher & URL resolver
-│   │   ├── Controller.php                   # Base Controller (render, json, input)
-│   │   ├── Database.php                     # PDO MySQL Singleton connection
-│   │   ├── Env.php                          # Safe .env parser
-│   │   ├── Model.php                        # Base Model PDO
-│   │   └── View.php                         # View renderer with layouts & components
-│   ├── Helpers/
-│   │   └── ComponentHelper.php              # Global helpers (url, asset, render_component)
-│   ├── Models/                              # (Siap untuk entitas User, Tagihan, Kas)
-│   └── Views/
-│       ├── layouts/
-│       │   ├── app.php                      # Master Layout (Sidebar, Navbar, Content, Footer)
-│       │   ├── guest.php                    # Guest Layout (Landing & Login)
-│       │   └── partials/
-│       │       ├── navbar.php               # Header navbar dengan role indicator
-│       │       ├── sidebar.php              # Role-based navigation sidebar
-│       │       └── footer.php               # Footer aplikasi
-│       ├── components/                      # 7 Reusable UI Components
-│       │   ├── button.php
-│       │   ├── form.php
-│       │   ├── table.php
-│       │   ├── card.php
-│       │   ├── modal.php
-│       │   ├── alert.php
-│       │   └── pagination.php
-│       ├── home/
-│       │   └── index.php                    # Landing page
-│       ├── auth/
-│       │   └── login.php                    # Login form placeholder
-│       ├── dashboard/
-│       │   └── index.php                    # Dashboard template kosong
-│       ├── showcase/
-│       │   └── index.php                    # Interaktif katalog komponen
-│       └── errors/
-│           └── 404.php                      # Error 404 page
-├── config/
-│   ├── app.php                              # Konfigurasi nama aplikasi & debug
-│   └── database.php                         # Konfigurasi MySQL
-├── public/
-│   ├── assets/
-│   │   ├── css/app.css                      # Custom styles & responsive utilities
-│   │   └── js/app.js                        # Sidebar toggle, modal & toast helpers
-│   ├── index.php                            # Front Controller tunggal
-│   └── .htaccess                            # Clean URL rewrite
-├── routes/
-│   └── web.php                              # Definisi rute aplikasi
-├── .env                                     # Environment variables (DB credentials)
-├── .env.example                             # Template environment
-├── .gitignore
-├── .htaccess                                # Root rewrite ke public/
-├── composer.json                            # PSR-4 autoloading
-└── README.md
-```
-
----
-
-## 🚀 Cara Menjalankan Aplikasi
-
-### Opsi 1: Menggunakan Laragon (Rekomendasi)
-1. Buka aplikasi **Laragon** dan klik **Start All** (Apache & MySQL).
-2. Akses aplikasi melalui browser:
-   ```text
-   http://localhost/sistem%20keuangan/
-   ```
-   *Atau jika Virtual Host aktif:*
-   ```text
-   http://sistem-keuangan.test
-   ```
-
-### Opsi 2: Menggunakan PHP Built-in Server
-Jalankan perintah berikut di terminal:
-```bash
-php -S 127.0.0.1:8000 -t public
-```
-Lalu buka browser di: `http://127.0.0.1:8000`
-
----
-
-## 🤖 Menjalankan Node.js AI Chatbot (NVIDIA NIM)
-
-Chatbot asisten cerdas pada halaman **Beranda** ditenagai oleh **Node.js** dan model **NVIDIA NIM AI**:
-
-1. **Jalankan via Windows Batch File (Otomatis):**
-   Cukup klik dua kali file:
-   ```text
-   start-chatbot.bat
-   ```
-
-2. **Atau jalankan via Terminal:**
-   ```bash
-   node chatbot/server.js
-   ```
-   *Atau jika menggunakan Node di Laragon:*
-   ```bash
-   "C:\laragon\bin\nodejs\node-v22\node.exe" chatbot/server.js
-   ```
-
-3. **Status Endpoint:**
-   - Server Chatbot: `http://localhost:3001`
-   - Health check: `http://localhost:3001/api/status`
-   - AI Engine: **NVIDIA NIM** (Model: `meta/llama-3.2-11b-vision-instruct`, Key ID: `2cbc5b5a-b68d-4bd0-be93-91fc2736b703`)
-   - Chatbot Widget: Tersedia dengan ikon chat mengambang (FAB) di pojok kanan bawah halaman **Beranda**.
-
----
-
-## 🧭 Rute & Navigasi
-
-| Rute | Peruntukan |
+| Keterangan | Informasi |
 |---|---|
-| `/` | Landing Page utama sistem |
-| `/login` | Form login placeholder dengan selector peran |
-| `/dashboard` | Template dashboard kosong (Role Admin) |
-| `/dashboard?role=admin` | Simulasi dashboard & navigasi Admin |
-| `/dashboard?role=mahasiswa` | Simulasi dashboard & navigasi Mahasiswa |
-| `/dashboard?role=kasir` | Simulasi dashboard & navigasi Kasir Loket |
-| `/dashboard?role=keuangan` | Simulasi dashboard & navigasi Bagian Keuangan |
-| `/components` | Showcase 7 Reusable UI Components |
+| Nama | Zahia Wafiqo Sarwa |
+| NIM | 41257232 |
+| Program Studi | Teknik Informatika |
+| Kelas | 1D |
+| Institusi | STMIK IKMI Cirebon |
+| Mata Kuliah | Rekayasa Perangkat Lunak |
+
+## 2. Deskripsi Proyek
+
+Smart Campus Cash merupakan aplikasi berbasis web yang dirancang untuk membantu pengelolaan administrasi keuangan kampus secara terstruktur dan terintegrasi.
+
+Sistem ini mendukung pengelolaan data pengguna, tagihan mahasiswa, pembayaran, transaksi kas, dan informasi keuangan. Aplikasi juga menyediakan rancangan fitur AI Financial Assistant untuk membantu pengguna memperoleh informasi melalui percakapan.
+
+Proyek ini dikembangkan sebagai pemenuhan tugas akhir mata kuliah Rekayasa Perangkat Lunak.
+
+## 3. Tujuan Sistem
+
+- Mempermudah pengelolaan administrasi keuangan kampus.
+- Membantu pengelolaan tagihan dan pembayaran mahasiswa.
+- Mempermudah pencatatan transaksi keuangan.
+- Menyediakan informasi keuangan secara terstruktur.
+- Mengembangkan layanan bantuan informasi melalui AI Financial Assistant.
+
+## 4. Fitur Sistem
+
+- Login dan autentikasi pengguna.
+- Dashboard aplikasi.
+- Pengelolaan pengguna.
+- Pengelolaan data mahasiswa.
+- Pengelolaan kategori dan tagihan.
+- Pengelolaan pembayaran.
+- Pencatatan transaksi kas.
+- Informasi dan laporan keuangan.
+- AI Financial Assistant.
+
+Ketersediaan setiap fitur mengikuti implementasi pada versi aplikasi yang dikembangkan.
+
+## 5. Hak Akses Pengguna
+
+| Pengguna | Hak Akses |
+|---|---|
+| Admin | Pengelolaan data utama dan sistem |
+| Mahasiswa | Melihat tagihan dan riwayat pembayaran |
+| Kasir | Membantu proses pembayaran |
+| Bagian Keuangan | Pengelolaan transaksi dan laporan |
+
+## 6. Teknologi yang Digunakan
+
+- PHP
+- MySQL
+- HTML
+- CSS
+- JavaScript
+- PDO
+- Arsitektur Model View Controller (MVC)
+
+## 7. Perancangan Sistem
+
+Dokumentasi perancangan sistem meliputi:
+
+- Product Requirement Document (PRD).
+- Software Design Document (SDD).
+- Use Case Diagram.
+- Activity Diagram.
+- Class Diagram.
+- Sequence Diagram.
+- Entity Relationship Diagram (ERD).
+- Desain UI/UX menggunakan Figma.
+
+## 8. Prototipe UI/UX
+
+Link Figma:
+
+https://www.figma.com/design/aFkKqhuOconSQs1OGwDcbR/Untitled
+
+## 9. Video Presentasi
+
+Video Progres 1:
+[MASUKKAN LINK VIDEO 1]
+
+Video Progres 2:
+[MASUKKAN LINK VIDEO 2]
+
+Video Final Live Demo:
+[MASUKKAN LINK VIDEO 3]
+
+## 10. Cara Instalasi
+
+1. Download atau clone repository ini.
+2. Ekstrak file proyek jika menggunakan ZIP.
+3. Pindahkan folder proyek ke direktori server lokal, misalnya htdocs.
+4. Buat database MySQL sesuai konfigurasi aplikasi.
+5. Import file database atau SQL yang disediakan.
+6. Sesuaikan konfigurasi database pada file konfigurasi lokal.
+7. Jalankan Apache dan MySQL.
+8. Buka aplikasi melalui browser sesuai alamat lokal dan konfigurasi proyek.
+
+Catatan: Sesuaikan nama database, konfigurasi, dan alamat aplikasi dengan source code yang digunakan.
+
+## 11. Pengujian
+
+Pengujian dilakukan untuk memeriksa fungsi dan interaksi pada aplikasi.
+
+Dokumentasi prototipe mencatat hasil pengujian interaksi. Pengujian backend dan integrasi perlu mengacu pada hasil eksekusi aktual agar tidak menyatakan fitur berhasil tanpa bukti.
+
+## 12. Repository
+
+GitHub:
+https://github.com/zahiawafiqo/Smart-Campus-Cash
+
+## 13. Penutup
+
+Smart Campus Cash dikembangkan sebagai proyek pembelajaran Rekayasa Perangkat Lunak dengan menerapkan tahapan analisis kebutuhan, perancangan sistem, implementasi, dan pengujian perangkat lunak.
+
+Diharapkan aplikasi ini dapat menjadi solusi pendukung pengelolaan administrasi keuangan kampus secara digital.
 
 ---
-
-## 🎨 Komponen UI Reusable
-
-Semua komponen UI dapat dipanggil di view manapun menggunakan helper `render_component($nama, $props)`:
-1. `button` &mdash; Variasi varian, ukuran, status loading/disabled, dan ikon.
-2. `form` &mdash; Input text, password, select, textarea, switch/checkbox, dan floating label.
-3. `table` &mdash; Tabel responsif, styled headers, badges status, dan aksi.
-4. `card` &mdash; Kartu metrik, kartu konten berheader, dan statistik kas.
-5. `modal` &mdash; Dialog popup interaktif Bootstrap 5.3.
-6. `alert` &mdash; Banner notifikasi dismissible & toast popup.
-7. `pagination` &mdash; Navigasi halaman dinamis dengan counter data.
+**Dikembangkan oleh Zahia Wafiqo Sarwa**  
+**STMIK IKMI Cirebon**
